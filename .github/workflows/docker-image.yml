@@ -16,6 +16,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag kp45-ubuntu2004:0.0.1
     - name: Run a Docker container
-      run: docker run ubuntu:20.04 -n kp45-ubuntu2004
+      run: docker run --name kp45-ubuntu2004 ubuntu:20.04
     - name: Export the Docker image
       run: docker export -o kp45-ubuntu2004.tar.gz kp45-ubuntu2004 && ls -h kp45-ubuntu2004.tar.gz
